@@ -28,25 +28,19 @@
         $res = $con->query("SELECT * FROM users");
         $cos = $res->fetch_all();
 
-        echo '<center><div class="d1"><h1>Logowanie:</h1><br> Nazwa Użytkownika: <input name="login"><br> Haslo: <input name="password" type="password"><br><input type="submit">';
+        echo '<center><div class="d1"><h1>Rejestracja:</h1><br> Nazwa Użytkownika: <input name="login"><br> Haslo: <input name="password" type="password"><br><input type="submit">';
         if($_POST!=NULL)
         {
-            for($i=0;$i<count($cos);$i++)
+            if($_POST['login']!="" && $_POST['password']!="")
             {
-                if($_POST['login']==$cos[$i][1] && $_POST['password']==$cos[$i][2])
-                {
-                    echo 'udalo sie zalogowac';
-                    header('location: strona.php');
-                    break;
-                }
-                else
-                {
-                }
+                $sqlquery = "INSERT INTO `users` VALUES ('".count($cos)."', '".$_POST['login']."', '".$_POST['password']."', '0', '');";
+                $con->query($sqlquery);
+                header('location: index.php');
             }
         }
         echo '</form>';
 
-        echo '<form action="rejestracja.php"><button>Rejestracja</button></form></center></div>';
+        echo '<form action="index.php"><button>Logowanie</button></form></center></div>';
     ?>
 
     </body>
