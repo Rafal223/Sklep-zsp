@@ -23,6 +23,7 @@
     </head>
     <body>
     <?php
+        session_start();
         $con = new mysqli("127.0.0.1","root","","skelp-zsp");
         echo '<form method="POST">';
         $res = $con->query("SELECT * FROM users");
@@ -35,17 +36,16 @@
             {
                 if($_POST['login']==$cos[$i][1] && $_POST['password']==$cos[$i][2])
                 {
+                    $_SESSION["login"] = $_POST['login'];
+                    $_SESSION["id"] = $i;
                     echo 'udalo sie zalogowac';
-                    header('location: strona.php');
-                    break;
-                }
-                else
-                {
+                    header("Location: strona.php");
                 }
             }
         }
         echo '</form>';
-
+    ?>
+    <?php
         echo '<form action="rejestracja.php"><button>Rejestracja</button></form></center></div>';
     ?>
 
