@@ -43,10 +43,8 @@
                 }
             }
         }
+        echo '<a href="rejestracja.php"><input type="button" value="Rejestracja"></a></center></div>';
         echo '</form>';
-    ?>
-    <?php
-        echo '<form action="rejestracja.php"><button>Rejestracja</button></form></center></div>';
     ?>
 
     </body>

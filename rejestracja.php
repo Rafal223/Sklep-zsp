@@ -38,9 +38,8 @@
                 header('location: index.php');
             }
         }
+        echo '<a href="index.php"><input type="button" value="Logowanie"></a></center></div>';
         echo '</form>';
-
-        echo '<form action="index.php"><button>Logowanie</button></form></center></div>';
     ?>
 
     </body>

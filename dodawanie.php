@@ -41,7 +41,7 @@
     }
     echo '</form>';
 
-    echo '<form action="strona.php"><button>Wróć</button></form></center></div>';
+    echo '<a href="strona.php"><button>Wróć</button></a></center></div>';
     ?>
         </div></center>
     </body>
