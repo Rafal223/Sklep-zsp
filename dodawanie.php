@@ -6,8 +6,8 @@
             background: grey;
             height: 800px;
             width: 500px;
-            border: 50%;
-            outline: 5px black solid;
+            border: 5px solid black;
+            border-radius: 50px;
             font-size: 20px;
             text-align: center;
         }
@@ -22,7 +22,7 @@
         </style>
     </head>
     <body>
-        <center><div class="d1">
+        <center>
     <?php
     session_start();
     $con = new mysqli("127.0.0.1","root","","skelp-zsp");
