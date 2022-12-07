@@ -51,19 +51,21 @@
 
         echo '<div class="srodek">';
 
-        $id=0;
-        $nastepny = $con->query("SELECT * FROM offerts WHERE id>$id order by id ASC");
-        $nast = $nastepny->fetch_all();
+        $offset=($_GET['page']-1)*10;
+        $cos2 = $con->query("SELECT * FROM offerts LIMIT 10 OFFSET ".$offset."");
+        $cos22 = $cos2->fetch_all();
 
-        for($i=0; $i<count($nast);$i++)
+        for($i = 0; $i<count($cos22);$i++)
         {
             echo '<div class="blok">item: '.$cos[$i][1].', Sprzedający: '.$cos1[$cos[$i][3]][1].'<br>opis: '.$cos[$i][2].' </div>';
         }
 
-
-        echo '<br><input type="submit" name="strona" value="Poprzednie"> <input type="submit" name="strona" value="Nastepne">';
+        $ile = (count($cos)/10)+1;
+        for($i = 1; $i<$ile; $i++)
+        {
+            echo '<a href="strona.php?page='.$i.'">'.$i.'</a>';
+        }
         echo '</div></form>';
-        print_r($_POST);
     ?>
         </div></center>
     </body>

@@ -40,7 +40,7 @@
                     $_SESSION["login"] = $_POST['login'];
                     $_SESSION["id"] = $i;
                     echo 'udalo sie zalogowac';
-                    header("Location: strona.php");
+                    header("Location: strona.php?page=1");
                 }
             }
         }
