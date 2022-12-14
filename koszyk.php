@@ -6,10 +6,10 @@
         <center><div class="d1">
     <?php
         session_start();
-        echo 'Zalogowany jako: '.$_SESSION["login"].'<h3>Agatka.pl</h3>';
+        echo 'Zalogowany jako: '.$_SESSION["login"].'<h3>Twój koszyk</h3>';
 
         echo '<a href="index.php">Wyloguj</a>';
-        echo '<a href="koszyk.php?page=1">Koszyk</a>';
+        echo '<a href="strona.php?page=1">Strona Główna</a>';
         echo '<a href="dodawanie.php">Wystaw</a>';
 
         $con = new mysqli("127.0.0.1","root","","skelp-zsp");
@@ -28,13 +28,16 @@
 
         for($i = 0; $i<count($cos22);$i++)
         {
+            if($cos22[$i][0]==$_SESSION["id"])
+            {
             echo '<div class="blok">item: '.$cos[$i][1].', Sprzedający: '.$cos1[$cos[$i][3]][1].'<br>opis: '.$cos[$i][2].'<a href="szczegol.php?id='.$i.'">Szczegóły</a> </div>';
+            }
         }
         echo '<br>';
-        $ile = (count($cos)/10)+1;
+        $ile = (count($cos22)/10)+1;
         for($i = 1; $i<$ile; $i++)
         {
-            echo '<a class="dwa" href="strona.php?page='.$i.'">'.$i.'</a>';
+            echo '<a class="dwa" href="koszyk.php?page='.$i.'">'.$i.'</a>';
         }
         echo '</div></form>';
     ?>

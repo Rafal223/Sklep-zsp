@@ -1,0 +1,56 @@
+.d1
+{
+    background: grey;
+    height: 800px;
+    border: 2px solid black;
+    border-radius: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+button
+{
+    background: lightgrey;
+}
+.srodek
+{
+    margin: 15px 15px 15px 15px;
+    text-align: left;
+}
+.blok
+{
+    background: lightgrey;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 10px 0 0 0;
+}
+a, input
+{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background: lightgrey;
+    border: 2px solid black;
+}
+.dwa
+{
+    text-decoration: none;
+    color: black;
+    float: left;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    background: lightgrey;
+    border: 2px solid black;
+    margin: 5px;
+}
+.blok a
+{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background: lightgrey;
+    float: right;
+    height: 30px;
+    width: 100px;
+    border: 1px solid black;
+}

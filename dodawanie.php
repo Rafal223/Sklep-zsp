@@ -1,25 +1,6 @@
 <html>
     <head>
-        <style>
-        .d1
-        {
-            background: grey;
-            height: 800px;
-            width: 500px;
-            border: 5px solid black;
-            border-radius: 50px;
-            font-size: 20px;
-            text-align: center;
-        }
-        input
-        {
-            background: lightgrey;
-        }
-        button
-        {
-            background: lightgrey;
-        }
-        </style>
+    <link rel="stylesheet" href="styl.css">
     </head>
     <body>
         <center>
@@ -42,7 +23,7 @@
     }
     echo '</form>';
 
-    echo '<a href="strona.php?page=1"><button>Wróć</button></a></center></div>';
+    echo '<a href="strona.php?page=1">Wróć</a></center></div>';
     ?>
         </div></center>
     </body>

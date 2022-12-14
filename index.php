@@ -1,26 +1,6 @@
 <html>
     <head>
-        <style>
-        .d1
-        {
-            background: grey;
-            height: 500px;
-            width: 500px;
-            border: 50%;
-            border: 5px solid black;
-            border-radius: 50px;
-            font-size: 20px;
-            text-align: center;
-        }
-        input
-        {
-            background: lightgrey;
-        }
-        button
-        {
-            background: lightgrey;
-        }
-        </style>
+    <link rel="stylesheet" href="styl.css">
     </head>
     <body>
     <?php
@@ -44,7 +24,7 @@
                 }
             }
         }
-        echo '<a href="rejestracja.php"><input type="button" value="Rejestracja"></a></center></div>';
+        echo '<a href="rejestracja.php">Rejestracja</a></center></div>';
         echo '</form>';
     ?>
 
