@@ -13,13 +13,13 @@
 
     $res1 = $con->query("SELECT * FROM offerts");
     $cos1 = $res1->fetch_all();
-    echo '<center><div class="d1"> Zalogowany jako: '.$_SESSION["login"].'<h1>Wystaw:</h1><br> Nazwa Itemu: <input name="name" value=""><br> Opis: <input name="description" value=""><br><input type="submit">';
+    echo '<center><div class="d1"> Zalogowany jako: '.$_SESSION["login"].'<h1>Edytuj:</h1><br> Nazwa Itemu: <input name="name" value="'.$cos1[$_GET["id"]][1].'"><br> Opis: <input name="description" value="'.$cos1[$_GET["id"]][2].'"><br><input type="submit">';
     if($_POST!=NULL)
     {
         print_r($_POST);
         if($_POST["name"]!="" && $_POST["description"]!="")
         {
-            $sqlquery = "INSERT INTO `offerts` VALUES ('".count($cos1)."', '".$_POST['name']."', '".$_POST['description']."','".$_SESSION["id"]."');";
+            $sqlquery = "UPDATE `offerts` SET `id` = '".$_GET["id"]."', `name` = '".$_POST["name"]."', `description` = '".$_POST["description"]."', `users_id` = '".$_SESSION["id"]."' WHERE `offerts`.`id` = '".$_GET["id"]."' AND `offerts`.`users_id` = '".$_SESSION["id"]."';";
             $con->query($sqlquery);
             header('location: strona.php?page=1');
         }

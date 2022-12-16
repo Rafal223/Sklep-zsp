@@ -9,6 +9,7 @@
         echo 'Zalogowany jako: '.$_SESSION["login"].'<h3>Agatka.pl</h3>';
 
         echo '<a href="index.php">Wyloguj</a>';
+        echo '<a href="twoje.php?page=1">Twoje oferty</a>';
         echo '<a href="koszyk.php?page=1">Koszyk</a>';
         echo '<a href="dodawanie.php">Wystaw</a>';
 
@@ -28,7 +29,7 @@
 
         for($i = 0; $i<count($cos22);$i++)
         {
-            echo '<div class="blok">item: '.$cos[$i][1].', Sprzedający: '.$cos1[$cos[$i][3]][1].'<br>opis: '.$cos[$i][2].'<a href="szczegol.php?id='.$i.'">Szczegóły</a> </div>';
+            echo '<div class="blok">item: '.$cos22[$i][1].', Sprzedający: '.$cos1[$cos22[$i][3]][1].'<br>opis: '.$cos22[$i][2].'<a href="szczegol.php?id='.$i.'">Szczegóły</a> </div>';
         }
         echo '<br>';
         $ile = (count($cos)/10)+1;

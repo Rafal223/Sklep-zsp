@@ -9,7 +9,7 @@
         $res = $con->query("SELECT * FROM users");
         $cos = $res->fetch_all();
 
-        echo '<center><div class="d1"><h1>Rejestracja:</h1><br> Nazwa Użytkownika: <input name="login"><br> Haslo: <input name="password" type="password"><br><input type="submit">';
+        echo '<center><div class="d1"><h1>Rejestracja:</h1><br> Nazwa Użytkownika: <input name="login"><br> Haslo: <input name="password" type="password"><br>';
         if($_POST!=NULL)
         {
             if($_POST['login']!="" && $_POST['password']!="")
@@ -19,7 +19,7 @@
                 header('location: index.php');
             }
         }
-        echo '<a href="index.php">Logowanie</a></center></div>';
+        echo '<a href="index.php">Logowanie</a><input type="submit"></center></div>';
         echo '</form>';
     ?>
 

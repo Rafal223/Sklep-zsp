@@ -19,7 +19,8 @@
     echo '<a href="strona.php?page=1">Wróć</a><input type="submit" name="Dodaj" value="Dodaj do koszyka"></center>';
     if($_POST!=null)
     {
-        $sqlquery = "INSERT INTO `orders` VALUES ('".$_SESSION["id"]."', '0', '".$_GET["id"]."','".$cos[$cos1[$_GET["id"]][3]][1]."');";
+        $sqlquery = "INSERT INTO `orders` VALUES ('".$_SESSION["id"]."', '0', '".$_GET["id"]."','".$cos1[$_GET["id"]][3]."');";
+        //INSERT INTO `orders` (`users_id`, `users_orders_id`, `offerts_id`, `offerts_users_id`) VALUES ('0', '0', '2', '1');
         $con->query($sqlquery);
         echo 'Dodano do koszyka';
     }

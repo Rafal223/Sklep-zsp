@@ -10,7 +10,7 @@
         $res = $con->query("SELECT * FROM users");
         $cos = $res->fetch_all();
 
-        echo '<center><div class="d1"><h1>Logowanie:</h1><br> Nazwa Użytkownika: <input name="login"><br> Haslo: <input name="password" type="password"><br><input type="submit">';
+        echo '<center><div class="d1"><h1>Logowanie:</h1><br> Nazwa Użytkownika: <input name="login"><br> Haslo: <input name="password" type="password"><br>';
         if($_POST!=NULL)
         {
             for($i=0;$i<count($cos);$i++)
@@ -24,7 +24,7 @@
                 }
             }
         }
-        echo '<a href="rejestracja.php">Rejestracja</a></center></div>';
+        echo '<div class="trzy"><a href="rejestracja.php">Rejestracja</a><input type="submit"></div></center></div>';
         echo '</form>';
     ?>
 
